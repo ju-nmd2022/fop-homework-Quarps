@@ -14,8 +14,8 @@ let shadowColorBlue = 13;
 
 //edit headline
 let headline = "PANTONE";
-//edit colorName
-let colorName = "SUS ORANGE";
+//edit colorNam
+let colorName = "IMPOSTER ORANGE";
 
 //edit scale
 let selfieScale = 0.65;
@@ -132,7 +132,7 @@ text(headline, 50, 620);
 
 //text
 fill(bodyColorRed, bodyColorGreen, bodyColorBlue);
-textSize(60);
+textSize(50);
 text(colorName, 50, 690);
 
 pop();
