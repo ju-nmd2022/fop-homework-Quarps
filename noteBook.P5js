@@ -1,0 +1,167 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Welcome to your p5.js Notebook"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function setup() {\n  window.createCanvas(200, 200);\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 07: FUNCTIONS - PARAMETER\n"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function eye(x, y) {\n  fill(255, 255, 255);\n  ellipse(x, y, 30);\n\n  fill(0, 0, 0);\n  ellipse(x, y, 10);\n}\n\neye(50, 30);\neye(100, 30);"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 07: FUNCTIONS - RETURN"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function multiply(a, b) {\n    return a * b;\n  }\n  console.log(multiply(42, 7));"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### CALCULATE CENTER"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function calculateCenter(poistion, size) {\n    return size / 2 + poistion;\n  }\n  const w = 100;\n  const h = 600;\n  \n  fill(255, 255, 0);\n  rect(100, 100, w, h);\n  \n  const x = calculateCenter(100, w);\n  const y = calculateCenter(100, h);\n  \n  fill(255, 0, 0);\n  ellipse(x, y, 50);"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 08: LETS MOVE THINGS"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let x = 100;\nlet y = 100;\nlet w = 50;\n\nfunction draw() {\n  clear();\n  ellipse(x, y, 50);\n  rect(50, 200, w, 50);\n\n  x += 3;\n  y += 0;\n  w += 3;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 09: MOUSE POSITION"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function draw() {\n    background(180, 180, 180, 100);\n    noStroke();\n    rect(mouseX, mouseY, 30);\n  }"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 09: LET YOUR EMOJI GROW"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function draw() {\n  clear();\n  eye(width / 2, height / 2, Math.max(0.1, (mouseX / width) * 2));\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 09: BUILD A SIMPLE DRAWING PROGRAM // CHANGE COLOR"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let lastX = 0;\nlet lastY = 0;\n\nfunction draw() {\n  strokeWeight(10);\n  stroke((mouseX / width) * 255, (mouseY / height) * 255, 0);\n  line(lastX, lastY, mouseX, mouseY);\n\n  lastX = mouseX;\n  lastY = mouseY;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 09: MOUSE BUTTONS"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function mousePressed() {\n    console.log(\"Button was pressed\");\n  }\n  \n  function mouseReleased() {\n    console.log(\"Button was released\");\n  }\n  \n  //when both above is used\n  function mouseClicked() {\n    console.log(\"Button was clicked\");\n  }"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 09: CHANGE THE SIZE ON CLICK"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let size = 10;\n\nfunction mouseClicked() {\n  size += 10;\n}\n\nfunction draw() {\n  ellipse(width / 2, height / 2, size);\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 09: DRAW EMOJI ON CLICK"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function mouseClicked() {\n  eye(mouseX, mouseY, 0.5);\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 09: EXERCISE - DRAWING PROGRAM"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let lastX = width / 2;\nlet lastY = height / 2;\n\nfunction mouseClicked() {\n  line(lastX, lastY, mouseX, mouseY);\n\n  lastX = mouseX;\n  lastY = mouseY;\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 10: CONDITIONS AND CONDITIONAL STATMENTS"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function draw() {\n    if (mouseX < 300) {\n      background(255, 0, 130);\n    } else if (mouseX < 500) {\n      background(255, 255, 231);\n    } else {\n      background(0, 255, 231);\n    }\n  }  "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 10: EXERCISE - ANIMATE THE EMOJI - RECTANGLE FORWARD TO BACKWARD"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let x = -150;\nlet direction = \"forward\";\n\nfunction draw() {\n  background(0, 0, 0);\n  fill(255, 141, 0);\n  rect(x, 100, 150);\n\n  if (direction === \"forward\") {\n    if (x < 400) {\n      x += 30;\n    } else {\n      direction = \"backward\";\n    }\n  } else if (direction === \"backward\") {\n    if (x > 0) {\n      x -= 100;\n    } else {\n      direction = \"forward\";\n    }\n  }\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 10: EXERCISE DRAWING PROGRAM"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let lastX = 0;\nlet lastY = 0;\nlet mouseIsActive = false;\n\nfunction draw() {\n  stroke(255, 255, 255);\n  strokeWeight(10);\n  if (mouseIsPressed) {\n    if (mouseIsActive) {\n      line(mouseX, mouseY, lastX, lastY);\n    }\n\n    lastX = mouseX;\n    lastY = mouseY;\n    mouseIsActive = true;\n  } else {\n    mouseIsActive = false;\n  }\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 10: USING STATES"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function startScreen() {\n    background(0, 0, 255);\n    text(\"Start\", width / 2 - 25, height / 2);\n  }\n  \n  function gameScreen() {\n    background(255, 255, 0);\n    text(\"Game\", width / 2 - 25, height / 2);\n  }\n  \n  function endScreen() {\n    background(0, 255, 0);\n    text(\"End\", width / 2 - 25, height / 2);\n  }\n  \n  let state = \"start\";\n  let gameTimer = 0;\n  \n  function draw() {\n    if (state === \"start\") {\n      startScreen();\n    } else if (state === \"game\") {\n      gameScreen();\n      gameTimer += 1;\n      if (gameTimer >= 100) {\n        gameTimer = 0;\n        state = \"end\";\n      }\n    } else {\n      endScreen();\n    }\n  }\n  function mouseClicked() {\n    if (state === \"start\") {\n      state = \"game\";\n    } else if (state === \"end\") {\n      state = \"game\";\n    }\n  }"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 11: LOGICAL OPERATORS"
+  }
+]

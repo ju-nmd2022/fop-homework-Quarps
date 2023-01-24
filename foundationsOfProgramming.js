@@ -117,12 +117,109 @@
 // }
 
 //10: CONDITIONS AND CONDITIONAL STATMENTS
-function draw() {
-  if (mouseX < 300) {
-    background(255, 0, 130);
-  } else if (mouseX < 500) {
-    background(255, 255, 231);
-  } else {
-    background(0, 255, 231);
-  }
-}
+// function draw() {
+//   if (mouseX < 300) {
+//     background(255, 0, 130);
+//   } else if (mouseX < 500) {
+//     background(255, 255, 231);
+//   } else {
+//     background(0, 255, 231);
+//   }
+// }
+
+// 10: EXERCISE - ANIMATE THE EMOJI - RECTANGLE FORWARD TO BACKWARD
+// let x = -150;
+// let direction = "forward";
+
+// function draw() {
+//   background(0, 0, 0);
+//   fill(255, 141, 0);
+//   rect(x, 100, 150);
+
+//   if (direction === "forward") {
+//     if (x < 400) {
+//       x += 30;
+//     } else {
+//       direction = "backward";
+//     }
+//   } else if (direction === "backward") {
+//     if (x > 0) {
+//       x -= 100;
+//     } else {
+//       direction = "forward";
+//     }
+//   }
+// }
+
+// 10: EXERCISE DRAWING PROGRAM
+// let lastX = 0;
+// let lastY = 0;
+// let mouseIsActive = false;
+
+// function draw() {
+//   stroke(255, 255, 255);
+//   strokeWeight(10);
+//   if (mouseIsPressed) {
+//     if (mouseIsActive) {
+//       line(mouseX, mouseY, lastX, lastY);
+//     }
+
+//     lastX = mouseX;
+//     lastY = mouseY;
+//     mouseIsActive = true;
+//   } else {
+//     mouseIsActive = false;
+//   }
+// }
+
+//10: USING STATES
+// function startScreen() {
+//   background(0, 0, 255);
+//   text("Start", width / 2 - 25, height / 2);
+// }
+
+// function gameScreen() {
+//   background(255, 255, 0);
+//   text("Game", width / 2 - 25, height / 2);
+// }
+
+// function endScreen() {
+//   background(0, 255, 0);
+//   text("End", width / 2 - 25, height / 2);
+// }
+
+// let state = "start";
+// let gameTimer = 0;
+
+// function draw() {
+//   if (state === "start") {
+//     startScreen();
+//   } else if (state === "game") {
+//     gameScreen();
+//     gameTimer += 1;
+//     if (gameTimer >= 100) {
+//       gameTimer = 0;
+//       state = "end";
+//     }
+//   } else {
+//     endScreen();
+//   }
+// }
+// function mouseClicked() {
+//   if (state === "start") {
+//     state = "game";
+//   } else if (state === "end") {
+//     state = "game";
+//   }
+// }
+
+//11: LOGICAL OPERATORS
+// (första punkten X, första punkten Y, första Kontrollpunkten X, första Kontrollpunkten Y, sista punkten X, sista punkten Y )
+// background(255, 255, 255);
+
+// beginShape();
+// fill(232, 231, 0);
+// vertex(100, 200);
+// bezierVertex(100, 200, 150, 250, 200, 200);
+// bezierVertex(200, 200, 250, 300, 300, 180);
+// endShape();
