@@ -332,39 +332,70 @@
 // }
 
 //12: EXAMPLE - MOVE A CAR WITH THE KEYBOARD
-function car(x, y, rotation) {
-  push();
-  translate(x, y);
-  rotate(rotation);
-  fill(128, 128, 0);
-  rect(-50, -30, 100, 60, 10);
-  fill(0, 0, 0);
-  rect(10, -25, 15, 50, 5);
-  pop();
-}
+// function car(x, y, rotation) {
+//   push();
+//   translate(x, y);
+//   rotate(rotation);
+//   fill(128, 128, 0);
+//   rect(-50, -30, 100, 60, 10);
+//   fill(0, 0, 0);
+//   rect(10, -25, 15, 50, 5);
+//   pop();
+// }
 
-let x = 100;
-let y = 100;
-let rotation = 0;
-let speed = 100;
+// let x = 100;
+// let y = 100;
+// let rotation = 0;
+// let speed = 100;
 
-function draw() {
-  background(255, 255, 255);
-  car(x, y, rotation);
+// function draw() {
+//   background(255, 255, 255);
+//   car(x, y, rotation);
 
-  x = x + Math.cos(rotation) * speed;
-  y = y + Math.sin(rotation) * speed;
+//   x = x + Math.cos(rotation) * speed;
+//   y = y + Math.sin(rotation) * speed;
 
-  if (keyIsDown(38)) {
-    speed = 5;
-  } else if (keyIsDown(40)) {
-    speed = -5;
-  } else {
-    speed = 0;
-  }
-  if (keyIsDown(37)) {
-    rotation = rotation - 0.05;
-  } else if (keyIsDown(39)) {
-    rotation = rotation + 0.05;
-  }
+//   if (keyIsDown(38)) {
+//     speed = 5;
+//   } else if (keyIsDown(40)) {
+//     speed = -5;
+//   } else {
+//     speed = 0;
+//   }
+//   if (keyIsDown(37)) {
+//     rotation = rotation - 0.05;
+//   } else if (keyIsDown(39)) {
+//     rotation = rotation + 0.05;
+//   }
+// }
+
+//13 ROUNDING NUMBERS
+// const randomNumber = Math.random() * 100;
+// const roundedNumber = Math.floor(randomNumber);
+// console.log(roundedNumber);
+
+// const p5randomNumber = Math.floor(random(10, 50));
+// console.log(p5randomNumber);
+
+// 13 EXAMPLE RANDOM X Y COORDINATES OF A SHAPE
+// function roundedRandom(min, max) {
+//   let number = Math.random() * (max - min) + min;
+//   number = Math.floor(number);
+//   return number;
+// }
+
+// function mouseClicked() {
+//   let x = roundedRandom(200, 300);
+//   let y = roundedRandom(200, 600);
+
+//   fill(255, 0, 0);
+//   ellipse(x, y, x - 100);
+// }
+
+//14: WHILE LOOPS
+let count = 0;
+
+while (count < 5) {
+  console.log(count);
+  count += 1;
 }
