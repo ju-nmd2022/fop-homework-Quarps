@@ -213,7 +213,6 @@
 //   }
 // }
 
-//11: LOGICAL OPERATORS
 // (första punkten X, första punkten Y, första Kontrollpunkten X, första Kontrollpunkten Y, sista punkten X, sista punkten Y )
 // background(255, 255, 255);
 
@@ -223,3 +222,149 @@
 // bezierVertex(100, 200, 150, 250, 200, 200);
 // bezierVertex(200, 200, 250, 300, 300, 180);
 // endShape();
+
+//11: LOGICAL OPERATORS
+
+// function draw() {
+//   if (mouseX <= 200 || mouseX >= 400) {
+//     background(255, 255, 255);
+//   } else {
+//     background(255, 255, 0);
+//   }
+// }
+//"&&" (and)
+//"||" (or)
+
+//11: Exercise - Animate your emoji
+
+// let x = 100;
+// let speed = 20;
+
+// function draw() {
+//   background(255, 255, 255);
+//   ellipse(x, 200, 100);
+//   x += speed;
+
+//   if (x > 600 || x < 100) {
+//     speed *= -1;
+//   }
+// }
+
+//11: EXERCISE - CREATE A BUTTON
+// function button(x, y, w, h) {
+//   noStroke();
+//   fill(100, 20, 1);
+//   rect(x, y, w, h);
+
+//   fill(255, 255, 255);
+//   text("Hello", x + w / 2, y + h / 2);
+// }
+// let buttonIsClicked = false;
+
+// function draw() {
+//   if (buttonIsClicked) {
+//     background(255, 100, 0);
+//   } else {
+//     background(25, 25, 200);
+//   }
+
+//   button(100, 100, 200, 60);
+// }
+
+// function mousePressed() {
+//   if (mouseX > 100 && mouseX < 100 + 200 && mouseY > 100 && mouseY < 100 + 60) {
+//     buttonIsClicked = true;
+//   }
+// }
+// function mouseReleased() {
+//   buttonIsClicked = false;
+// }
+
+//12: KEYBOARD OUTPUT
+// function keyPressed() {
+//   console.log("Key " + key + " has been pressed");
+// }
+
+// function keyReleased() {
+//   console.log("Key " + key + " has been released");
+// }
+
+// keycode.info;
+
+// function keyPressed() {
+//   console.log("Key " + keyCode + " has been pressed");
+// }
+
+// function keyReleased() {
+//   console.log("Key " + keyCode + " has been released");
+// }
+
+// function draw() {
+//   if (keyIsDown(82)) {
+//     background(255, 0, 0);
+//   } else if (keyIsDown(71)) {
+//     background(0, 255, 0);
+//   } else if (keyIsDown(66)) {
+//     background(0, 0, 255);
+//   } else {
+//     background(255, 255, 255);
+//   }
+// }
+
+// let x = 200;
+// let y = 200;
+// let size = 50;
+// let speed = 5;
+
+// function draw() {
+//   if (keyIsDown(37)) {
+//     x -= speed;
+//   } else if (keyIsDown(39)) {
+//     x += speed;
+//   } else if (keyIsDown(38)) {
+//     y -= speed;
+//   } else if (keyIsDown(40)) {
+//     y += speed;
+//   }
+
+//   background(255, 255, 255);
+//   ellipse(x, y, size);
+// }
+
+//12: EXAMPLE - MOVE A CAR WITH THE KEYBOARD
+function car(x, y, rotation) {
+  push();
+  translate(x, y);
+  rotate(rotation);
+  fill(128, 128, 0);
+  rect(-50, -30, 100, 60, 10);
+  fill(0, 0, 0);
+  rect(10, -25, 15, 50, 5);
+  pop();
+}
+
+let x = 100;
+let y = 100;
+let rotation = 0;
+let speed = 100;
+
+function draw() {
+  background(255, 255, 255);
+  car(x, y, rotation);
+
+  x = x + Math.cos(rotation) * speed;
+  y = y + Math.sin(rotation) * speed;
+
+  if (keyIsDown(38)) {
+    speed = 5;
+  } else if (keyIsDown(40)) {
+    speed = -5;
+  } else {
+    speed = 0;
+  }
+  if (keyIsDown(37)) {
+    rotation = rotation - 0.05;
+  } else if (keyIsDown(39)) {
+    rotation = rotation + 0.05;
+  }
+}

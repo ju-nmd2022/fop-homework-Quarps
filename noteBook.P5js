@@ -162,6 +162,91 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "### 11: LOGICAL OPERATORS"
+    "value": "### 11: LOGICAL OPERATORS\n\"&&\" (and)  -  \"||\" (or)"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function draw() {\n    if (mouseX <= 200 || mouseX >= 400) {\n      background(255, 255, 255);\n    } else {\n      background(255, 255, 0);\n    }\n  }"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 11: Exercise - Animate your emoji\nbounce, back and forth"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let x = 100;\nlet speed = 20;\n\nfunction draw() {\n  background(255, 255, 255);\n  ellipse(x, 200, 100);\n  x += speed;\n\n  if (x > 600 || x < 100) {\n    speed *= -1;\n  }\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 11: EXERCISE - CREATE A BUTTON"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function button(x, y, w, h) {\n    noStroke();\n    fill(100, 20, 1);\n    rect(x, y, w, h);\n  \n    fill(255, 255, 255);\n    text(\"Hello\", x + w / 2, y + h / 2);\n  }\n  let buttonIsClicked = false;\n  \n  function draw() {\n    if (buttonIsClicked) {\n      background(255, 100, 0);\n    } else {\n      background(25, 25, 200);\n    }\n  \n    button(100, 100, 200, 60);\n  }\n  \n  function mousePressed() {\n    if (mouseX > 100 && mouseX < 100 + 200 && mouseY > 100 && mouseY < 100 + 60) {\n      buttonIsClicked = true;\n    }\n  }\n  function mouseReleased() {\n    buttonIsClicked = false;\n  }"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 12: KEYBOARD OUTPUT\nkeyPressed"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function keyPressed() {\n  console.log(\"Key \" + key + \" has been pressed\");\n}\n\nfunction keyReleased() {\n  console.log(\"Key \" + key + \" has been released\");\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "KeyCode  -  www.keycode.info"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function keyPressed() {\n  console.log(\"Key \" + keyCode + \" has been pressed\");\n}\n\nfunction keyReleased() {\n  console.log(\"Key \" + keyCode + \" has been released\");\n}"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function draw() {\n  if (keyIsDown(82)) {\n    background(255, 0, 0);\n  } else if (keyIsDown(71)) {\n    background(0, 255, 0);\n  } else if (keyIsDown(66)) {\n    background(0, 0, 255);\n  } else {\n    background(255, 255, 255);\n  }\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 12: EXERCISE "
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Hold to move smoother"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let x = 200;\nlet y = 200;\nlet size = 50;\nlet speed = 5;\n\nfunction draw() {\n  if (keyIsDown(37)) {\n    x -= speed;\n  } else if (keyIsDown(39)) {\n    x += speed;\n  } else if (keyIsDown(38)) {\n    y -= speed;\n  } else if (keyIsDown(40)) {\n    y += speed;\n  }\n\n  background(255, 255, 255);\n  ellipse(x, y, size);\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Click to move in different directions"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let x = 200;\nlet y = 200;\nlet size = 50;\nlet speed = 5;\n\nfunction draw() {\n  background(255, 255, 255);\n  ellipse(x, y, size);\n}\n\nfunction keyPressed() {\n  if (keyCode === 37) {\n    x -= speed;\n  } else if (keyCode === 39) {\n    x += speed;\n  }\n  if (keyCode === 38) {\n    y -= speed;\n  } else if (keyCode === 40) {\n    y += speed;\n  }\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### 12: EXAMPLE - MOVE A CAR WITH THE KEYBOARD"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function car(x, y, rotation) {\n  push();\n  translate(x, y);\n  rotate(rotation);\n  fill(128, 128, 0);\n  rect(-50, -30, 100, 60, 10);\n  fill(0, 0, 0);\n  rect(10, -25, 15, 50, 5);\n  pop();\n}\n\nlet x = 100;\nlet y = 100;\nlet rotation = 0;\nlet speed = 100;\n\nfunction draw() {\n  background(255, 255, 255);\n  car(x, y, rotation);\n\n  x = x + Math.cos(rotation) * speed;\n  y = y + Math.sin(rotation) * speed;\n\n  if (keyIsDown(38)) {\n    speed = 5;\n  } else if (keyIsDown(40)) {\n    speed = -5;\n  } else {\n    speed = 0;\n  }\n  if (keyIsDown(37)) {\n    rotation = rotation - 0.05;\n  } else if (keyIsDown(39)) {\n    rotation = rotation + 0.05;\n  }\n}"
   }
 ]
