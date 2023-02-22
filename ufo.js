@@ -50,8 +50,13 @@ function ufo(x, y, s, r) {
   rect(570, 170, 90, 50, 3);
 
   //numbers on the display
-  textWeight(12);
   text(123, 123, "hei");
+
+  //wheel of controlling time
+  push();
+  fill(15, 15, 14);
+  ellipse(615, 340, 50);
+  pop();
 
   pop();
 }
